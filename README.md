@@ -6,3 +6,4 @@ This is an example web application to show how to use ASP.Net Core with MySQL da
 2. `cd Ecommerce`
 3. `docker-compose up -d`
 
+
