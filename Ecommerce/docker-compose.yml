@@ -1,0 +1,31 @@
+version: '2'
+services:
+  db:
+    container_name: hello.db
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  web:
+    container_name: hello.web
+    build: .
+    ports:
+      - "7000:5000"
+    depends_on:
+      - db
+    links:
+      - db
+      
+  reverse-proxy:
+    container_name: hello.proxy
+    image: nginx
+    depends_on:
+      - web
+    ports:
+      - "9090:8080"
+    volumes:
+      - ./proxy.conf:/etc/nginx/conf.d/default.conf
