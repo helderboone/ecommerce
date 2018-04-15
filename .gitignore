@@ -320,4 +320,5 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
-
+/Ecommerce/out
+/Ecommerce/mysql
