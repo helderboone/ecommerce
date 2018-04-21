@@ -13,7 +13,7 @@ namespace Ecommerce.Data
             {
                 var scopeServiceProvider = serviceScope.ServiceProvider;
 
-                var db = scopeServiceProvider.GetService<MySqlDbContext>();
+                var db = scopeServiceProvider.GetService<DatabaseContext>();
 
                 if (await db.Database.EnsureCreatedAsync())
                 {
@@ -32,7 +32,7 @@ namespace Ecommerce.Data
              };
 
 
-            var db = serviceProvider.GetService<MySqlDbContext>();
+            var db = serviceProvider.GetService<DatabaseContext>();
 
             db.Products.AddRange(products);
 

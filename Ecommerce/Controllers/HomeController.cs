@@ -11,9 +11,9 @@ namespace Ecommerce.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly MySqlDbContext db;
+        private readonly DatabaseContext db;
 
-        public HomeController(MySqlDbContext db) => this.db = db;
+        public HomeController(DatabaseContext db) => this.db = db;
 
         public IActionResult Index()
         {

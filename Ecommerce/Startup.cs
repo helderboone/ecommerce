@@ -25,7 +25,7 @@ namespace Ecommerce
         {
             services.AddMvc();
 
-            services.AddDbContext<MySqlDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MySql")));
+            services.AddDbContext<DatabaseContext>(options => options.UseMySql(Configuration.GetConnectionString("MySql")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
