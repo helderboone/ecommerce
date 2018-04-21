@@ -2,24 +2,23 @@ version: '2'
 services:
   db:
     container_name: hello.db
-    image: mysql:5.7.18
+    image: postgres:9.6
     ports:
-      - "3306:3306"
+      - "5433:5432"
     environment:
-      - "MYSQL_ROOT_PASSWORD=123456"
-      - "MYSQL_DATABASE=docker"
-    volumes:
-      - ./mysql:/var/lib/mysql
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456    
 
   web:
     container_name: hello.web
     build: .
+    restart: always
     ports:
       - "7000:5000"
     depends_on:
       - db
     links:
-      - db
+      - db    
       
   reverse-proxy:
     container_name: hello.proxy
@@ -29,4 +28,4 @@ services:
     ports:
       - "9090:8080"
     volumes:
-      - ./proxy.conf:/etc/nginx/conf.d/default.conf
+      - ./proxy.conf:/etc/nginx/conf.d/default.conf    
