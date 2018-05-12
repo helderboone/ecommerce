@@ -1,8 +1,16 @@
-FROM microsoft/dotnet:latest
+FROM microsoft/dotnet:2.1-sdk-alpine AS build-env
 WORKDIR /app
-COPY . /app
-RUN dotnet restore
-EXPOSE 5000
-ENV ASPNETCORE_URLS http://*:5000
-ENTRYPOINT ["dotnet","run"]
 
+COPY *.csproj ./
+RUN dotnet restore
+
+COPY . ./
+RUN dotnet publish -o out /p:PublishWithAspNetCoreTargetManifest="false"
+
+FROM microsoft/dotnet:2.1-runtime-alpine
+
+WORKDIR /app
+
+COPY --from=build-env /app/out .
+
+ENTRYPOINT ["dotnet", "Ecommerce.dll"]
