@@ -1,11 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
+﻿.body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -32,4 +25,22 @@
     .carousel-caption {
         display: none;
     }
+}
+
+.notice-bar {
+    top: 0;
+    left: 0;
+    height: 32px;
+    background: #169888;
+    width: 100%;
+    z-index: 1;
+    display: table;
+    color: #fff;
+}
+
+.notice-bar-message {
+    text-align: center;
+    font-size: 12px;
+    display: table-cell;
+    vertical-align: middle;
 }
