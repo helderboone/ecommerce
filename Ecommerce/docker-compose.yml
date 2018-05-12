@@ -2,7 +2,7 @@ version: '2'
 services:
   db:
     container_name: hello.db
-    image: postgres:9.6
+    image: postgres:10.3-alpine
     ports:
       - "5433:5432"
     environment:
@@ -11,6 +11,7 @@ services:
 
   web:
     container_name: hello.web
+    image: helderboone/ecommerce
     build: .
     restart: always
     ports:
@@ -22,7 +23,7 @@ services:
       
   reverse-proxy:
     container_name: hello.proxy
-    image: nginx
+    image: nginx:1.13.12-alpine
     depends_on:
       - web
     ports:
