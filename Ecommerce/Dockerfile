@@ -5,9 +5,9 @@ COPY *.csproj ./
 RUN dotnet restore
 
 COPY . ./
-RUN dotnet publish -o out /p:PublishWithAspNetCoreTargetManifest="false"
+RUN dotnet publish -o out
 
-FROM microsoft/dotnet:2.1-runtime-alpine
+FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine
 
 WORKDIR /app
 
