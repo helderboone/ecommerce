@@ -1,0 +1,19 @@
+﻿@model Ecommerce.App.Features.Admin.Product.Commands.CreateProductCommand
+
+@{ ViewBag.Action = Url.Action("Create"); }
+
+<div class="row">
+    <div class="col-md-8 m-auto">
+        <div class="card mt-5">
+            <div class="card-body">
+                <form asp-route="@ViewBag.Action" method="post">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
