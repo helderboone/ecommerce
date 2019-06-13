@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Web", "Ecommerce\Ecommerce.Web.csproj", "{029871D7-EF47-4E75-B516-876B7E980DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Web", "src\Ecommerce\Ecommerce.Web.csproj", "{029871D7-EF47-4E75-B516-876B7E980DA8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.App", "Ecommerce.App\Ecommerce.App.csproj", "{1C746B38-F86E-4DB2-9FE3-F4EFD801E4A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.App", "src\Ecommerce.App\Ecommerce.App.csproj", "{1C746B38-F86E-4DB2-9FE3-F4EFD801E4A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Domain", "Ecommerce.Domain\Ecommerce.Domain.csproj", "{A61D70C8-9A61-4ECD-8A0B-0CA99251B1A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Domain", "src\Ecommerce.Domain\Ecommerce.Domain.csproj", "{A61D70C8-9A61-4ECD-8A0B-0CA99251B1A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Infra", "Ecommerce.Infra\Ecommerce.Infra.csproj", "{7ED4D32E-0CB4-45B8-8599-CBAC749F761D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Infra", "src\Ecommerce.Infra\Ecommerce.Infra.csproj", "{7ED4D32E-0CB4-45B8-8599-CBAC749F761D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
