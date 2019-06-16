@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Ecommerce.App.AutoMapper;
-using Ecommerce.Data;
+using Ecommerce.Infra.Context;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +27,7 @@ namespace Ecommerce
 
             services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DbConnection")));
 
-            services.AddAutoMapper( p => p.AddProfile(new AutoMapperConfig()));
+            services.AddAutoMapper();
 
             services.AddMediatR();
         }
