@@ -1,6 +1,8 @@
 ﻿using Ecommerce.App.Features.Admin.Product.Commands;
+using Ecommerce.App.Features.Admin.Product.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Ecommerce.Web.Controllers
@@ -21,17 +23,35 @@ namespace Ecommerce.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create(CreateProductQuery query)
         {
-            return View();
+            var result = await mediator.Send(query);
+
+            if (result.Success) return View(result.Content);
+
+            TempData["ErrorMessage"] = "Something wrong happend, please try again";
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
+            if (!ModelState.IsValid) return View(command);
+
             var result = await mediator.Send(command);
 
-            return RedirectToAction(nameof(Index));
+            if (result.Success)
+            {
+                TempData["SuccessMessage"] = result.Messages.FirstOrDefault();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            TempData["ErrorMessage"] = result.Messages.FirstOrDefault();
+
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }
