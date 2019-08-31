@@ -17,13 +17,13 @@
     var i = t.offset().top,
         a = "fixed-top",
         n = $(window).scrollTop();
-    $(window).on("load scroll resize", function () {
-        var r = e.outerHeight(),
-            o = $(this).scrollTop();
-        o < n ? o <= i && (e.hasClass(a) && e.removeClass(a), t.height(0)) : o >= i + r + 20 && (e.addClass(a), t.height(r)), n = o
-    }), $(".main-nav .nav-item.dropdown").hover(function () {
-        $(this).addClass("show").find("> .dropdown-menu").addClass("show")
-    }, function () {
-        $(this).removeClass("show").find("> .dropdown-menu").removeClass("show")
-    })
+        $(window).on("load scroll resize", function () {
+            var r = e.outerHeight(),
+                o = $(this).scrollTop();
+            o < n ? o <= i && (e.hasClass(a) && e.removeClass(a), t.height(0)) : o >= i + r + 20 && (e.addClass(a), t.height(r)), n = o
+        }), $(".main-nav .nav-item.dropdown").hover(function () {
+            $(this).addClass("show").find("> .dropdown-menu").addClass("show");
+        }, function () {
+            $(this).removeClass("show").find("> .dropdown-menu").removeClass("show");
+        });
 });
