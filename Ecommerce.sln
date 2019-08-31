@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Web", "src\Ecommerce\Ecommerce.Web.csproj", "{029871D7-EF47-4E75-B516-876B7E980DA8}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Domain", "src\Ecommerce.Domain\Ecommerce.Domain.csproj", "{A61D70C8-9A61-4ECD-8A0B-0CA99251B1A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Infra", "src\Ecommerce.Infra\Ecommerce.Infra.csproj", "{7ED4D32E-0CB4-45B8-8599-CBAC749F761D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E850BC21-A680-429D-8B67-6DECED89E3D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{029871D7-EF47-4E75-B516-876B7E980DA8} = {E850BC21-A680-429D-8B67-6DECED89E3D0}
+		{1C746B38-F86E-4DB2-9FE3-F4EFD801E4A6} = {E850BC21-A680-429D-8B67-6DECED89E3D0}
+		{A61D70C8-9A61-4ECD-8A0B-0CA99251B1A3} = {E850BC21-A680-429D-8B67-6DECED89E3D0}
+		{7ED4D32E-0CB4-45B8-8599-CBAC749F761D} = {E850BC21-A680-429D-8B67-6DECED89E3D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D27B7FE-0E97-4305-99C3-23FF60988D42}
