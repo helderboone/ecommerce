@@ -1,4 +1,4 @@
-version: '2'
+version: '3.3'
 services:
   db:
     container_name: hello.db
@@ -12,7 +12,9 @@ services:
   web:
     container_name: hello.web
     image: helderboone/ecommerce
-    build: .
+    build:
+      context: .
+      dockerfile: src/Ecommerce.Web/Dockerfile
     restart: always
     ports:
       - "7000:5000"
