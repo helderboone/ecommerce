@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Ecommerce.Infra.Context;
 using Ecommerce.Models;
-using Ecommerce.Data;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace Ecommerce.Controllers
 {

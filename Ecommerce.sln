@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Web", "src\Ecommerce\Ecommerce.Web.csproj", "{029871D7-EF47-4E75-B516-876B7E980DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Web", "src\Ecommerce.Web\Ecommerce.Web.csproj", "{029871D7-EF47-4E75-B516-876B7E980DA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.App", "src\Ecommerce.App\Ecommerce.App.csproj", "{1C746B38-F86E-4DB2-9FE3-F4EFD801E4A6}"
 EndProject
