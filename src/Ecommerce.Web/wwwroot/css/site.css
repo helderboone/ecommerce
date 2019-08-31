@@ -2145,3 +2145,8 @@ button:focus {
         -webkit-transition: all .1s ease-in-out 0s;
         transition: all .1s ease-in-out 0s
     }
+
+.navbar-gradient {
+    height: 6px;
+    background-image: linear-gradient(to right, #5653e2, #18e1ef);
+}
