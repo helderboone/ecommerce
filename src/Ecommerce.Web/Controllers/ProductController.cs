@@ -17,9 +17,14 @@ namespace Ecommerce.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index(IndexProduct.Query query)
         {
-            return View();
+            var result = await mediator.Send(query);
+
+            if (result.Success) return View(result.Content);
+
+            TempData["ErrorMessage"] = "Something wrong happend, please try again";
+            return RedirectToAction("Error");            
         }
 
         [HttpGet]

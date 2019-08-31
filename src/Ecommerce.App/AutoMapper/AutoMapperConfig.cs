@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Ecommerce.App.Features.Admin.Product.Commands;
+using Ecommerce.App.Features.Admin.Product.Queries;
 using Ecommerce.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -14,6 +15,8 @@ namespace Ecommerce.App.AutoMapper
             CreateMap<Category, SelectListItem>()
                 .ForMember(dest => dest.Text, opts => opts.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Value, opts => opts.MapFrom(src => src.Id));
+
+            CreateMap<IndexProduct.Model.ProductModel, Product>().ReverseMap();
         }
     }
 }
