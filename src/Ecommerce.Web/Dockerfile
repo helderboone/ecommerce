@@ -18,9 +18,10 @@ COPY ["src/Ecommerce.Web/Ecommerce.Web.csproj", "src/Ecommerce.Web/"]
 COPY ["src/Ecommerce.App/Ecommerce.App.csproj", "src/Ecommerce.App/"]
 COPY ["src/Ecommerce.Infra/Ecommerce.Infra.csproj", "src/Ecommerce.Infra/"]
 COPY ["src/Ecommerce.Domain/Ecommerce.Domain.csproj", "src/Ecommerce.Domain/"]
+COPY ["src/Ecommerce.Web/package.json", "src/Ecommerce.Web/"]
 
 RUN cd src/Ecommerce.Web/ \
-    && npm i --silent
+    && npm install
 
 COPY . .
 WORKDIR "/src/src/Ecommerce.Web"
