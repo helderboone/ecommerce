@@ -1,13 +1,4 @@
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
-
-# Setup NodeJs
-RUN apt-get update -qq && \
-    apt-get install -qq -y wget && \
-    apt-get install -qq -y gnupg2 && \
-    wget -qO- https://deb.nodesource.com/setup_8.x | bash - && \
-    apt-get install -qq -y build-essential nodejs && \
-    apt-get install -qq -y nginx
-# End setup
+FROM microsoft/dotnet:2.2-aspnetcore-runtime-alpine AS base
 
 WORKDIR /app
 
