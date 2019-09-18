@@ -25,6 +25,8 @@ namespace Ecommerce
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
 
+            services.AddRouting(options => options.LowercaseUrls = true);
+
             services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DbConnection")));
 
             services.AddAutoMapper();
