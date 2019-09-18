@@ -16,7 +16,7 @@ namespace Ecommerce.App.AutoMapper
                 .ForMember(dest => dest.Text, opts => opts.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Value, opts => opts.MapFrom(src => src.Id));
 
-            CreateMap<IndexProduct.Model.ProductModel, Product>().ReverseMap();
+            CreateMap<IndexProductQuery.Model.ProductModel, Product>().ReverseMap();
         }
     }
 }

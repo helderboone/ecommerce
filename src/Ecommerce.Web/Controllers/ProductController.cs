@@ -17,7 +17,7 @@ namespace Ecommerce.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(IndexProduct.Query query)
+        public async Task<IActionResult> Index(IndexProductQuery query)
         {
             var result = await mediator.Send(query);
 

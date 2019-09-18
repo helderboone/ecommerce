@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 namespace Ecommerce.App.Features.Admin.Product.Queries
 {
-    public class IndexProduct 
+    public class IndexProductQuery : IRequest<IResult>
     {
-        public class Query : IRequest<IResult> { }
-
         public class Model
         {
             public IEnumerable<ProductModel> Products { get; set; }

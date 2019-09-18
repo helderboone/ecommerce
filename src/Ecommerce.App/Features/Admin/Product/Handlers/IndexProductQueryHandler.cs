@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.App.Features.Admin.Product.Handlers
 {
-    public class IndexProductQueryHandler : IRequestHandler<IndexProduct.Query, IResult>
+    public class IndexProductQueryHandler : IRequestHandler<IndexProductQuery, IResult>
     {
         private readonly DatabaseContext db;
         private readonly IMapper mapper;
@@ -20,13 +20,13 @@ namespace Ecommerce.App.Features.Admin.Product.Handlers
             this.db = db;
             this.mapper = mapper;
         }
-        public async Task<IResult> Handle(IndexProduct.Query request, CancellationToken cancellationToken)
+        public async Task<IResult> Handle(IndexProductQuery request, CancellationToken cancellationToken)
         {
             var products = await db.Products.AsNoTracking().ToListAsync();
 
-            var mapped = mapper.Map<IEnumerable<Domain.Entities.Product>, IEnumerable<IndexProduct.Model.ProductModel>>(products);
+            var mapped = mapper.Map<IEnumerable<Domain.Entities.Product>, IEnumerable<IndexProductQuery.Model.ProductModel>>(products);
 
-            return new Result(new IndexProduct.Model { Products = mapped });
+            return new Result(new IndexProductQuery.Model { Products = mapped });
         }
     }
 }
