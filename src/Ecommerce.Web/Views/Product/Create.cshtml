@@ -1,0 +1,47 @@
+﻿@model Ecommerce.App.Features.Admin.Product.Commands.CreateProductCommand
+
+@{ Layout = "/Views/Shared/Admin/_Layout.cshtml"; }
+
+@{ ViewBag.Action = Url.Action("Create"); }
+
+<div class="row">
+    <div class="col-md-8 m-auto">
+        <div class="card mt-5">
+            <div class="card-body">
+                <form asp-action="Create" asp-controller="Product" method="post">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input class="form-control" asp-for="Name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col" condition="@(Model.Categories?.Any() == true)">
+                        <div class="form-group">
+                            <label asp-for="CategoryId"></label>
+                            <select class="form-control" asp-for="CategoryId" asp-items="Model.Categories">
+                                <option selected disabled style="display:none">Select</option>
+                            </select>
+                        </div>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Description"></label>
+                            <input class="form-control" asp-for="Description" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-action float-right">
+                        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
+                        Create
+                    </button>
+                    <a asp-action="Index" asp-controller="Product" class="btn btn-light float-right mr-2 text-muted">
+                        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

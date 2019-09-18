@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ecommerce</title>
+
+    <link rel="stylesheet" href="~/css/vendor.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar-gradient"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-brand">
+            <div><h5 class="text-white"><i class="fa fa-shopping-cart mr-2"></i>Ecommerce</h5></div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item mr-3">
+                    <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                        <i class="fa fa-dashboard" aria-hidden="true"></i>
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+            <a class="navbar-text" asp-action="SignOut" asp-controller="Account">
+                Logout <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    <script src="~/js/vendor.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

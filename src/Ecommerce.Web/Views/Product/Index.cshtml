@@ -1,0 +1,39 @@
+﻿@model Ecommerce.App.Features.Admin.Product.Queries.IndexProductQuery.Model
+
+@{ Layout = "/Views/Shared/Admin/_Layout.cshtml"; }
+
+<div class="row mt-4">
+    <div class="col">
+
+        <div class="card shadow">
+            <h5 class="card-header text-white bg-dark">Products</h5>
+            <div class="card-body p-0">
+                <table class="table">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Name</th>
+                            <th style="width: 10px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
+                            <tr>
+                                <td class="font-weight-bold">
+                                    <a asp-action="Details" asp-controller="Project" asp-route-id="@product.Id">
+                                        @product.Name
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="text-muted" data-toggle="tooltip" title="Unpin project">
+                                        <i class="fa fa-thumb-tack fa-rotate"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

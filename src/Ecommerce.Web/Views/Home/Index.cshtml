@@ -1,0 +1,253 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ecommerce</title>
+    <link rel="stylesheet" href="~/vendor.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <div class="top-header">
+        <div class="container-fluid limited">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-between">
+                        <nav class="nav d-none d-lg-flex">
+                            <a class="nav-link" href="shop.html">
+                                <i class="far fa-bell"></i>
+                                Get Minimum 30-70% Off On Over 1,50,000 Styles!
+                            </a>
+                        </nav>
+                        <nav class="nav ml-auto">
+                            <a class="nav-link d-none d-sm-block" href="faq.html"><i class="fa fa-question mr-1">Help</i></a>
+                            <a class="nav-link d-none d-sm-block" href="account-order.html"><i class="fa fa-list mr-1"></i> Track Order</a>
+                            <select name="lang" id="lang" hidden="hidden">
+                                <option value="en">English</option>
+                                <option value="fr">French</option>
+                            </select>
+                            <div class="nav-item dropdown dropdown-lang">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/lang_en.svg"> English</a>
+                                <div class="dropdown-menu animate" data-select="lang" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+                                    <button class="dropdown-item" type="button" data-value="en"><img src="images/lang_en.svg" alt="English"> English</button>
+                                    <button class="dropdown-item" type="button" data-value="fr"><img src="images/lang_fr.svg" alt="French"> French</button>
+                                </div>
+                            </div>
+                            <select name="currency" id="currency" hidden="hidden">
+                                <option value="usd">USD</option>
+                                <option value="eur">EUR</option>
+                            </select>
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">USD</a>
+                                <div class="dropdown-menu dropdown-menu-right animate" data-select="currency">
+                                    <button class="dropdown-item" type="button" data-value="usd">USD</button>
+                                    <button class="dropdown-item" type="button" data-value="eur">EUR</button>
+                                </div>
+                            </div>
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user mr-1"></i>Sign In</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-header" id="middle-header">
+        <div class="container-fluid limited position-relative">
+            <div class="input-search-wrapper invisible">
+                <form action="#" method="post">
+                    <span class="w-100" style="position: relative; display: inline-block;">
+                        <input type="text" class="form-control tt-hint" aria-label="Search" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255);">
+                        <input type="text" class="form-control tt-input" id="input-search" placeholder="Search" aria-label="Search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
+                        <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                    </span>
+                    <span class="rounded-circle bg-dark text-white toggle-search">
+                        <i class="small material-icons">close</i>
+                    </span>
+                    <input type="submit" hidden="hidden">
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-4 d-flex d-md-none align-items-center">
+                    <a href="#" class="text-dark" data-toggle="modal" data-target="#menuModal"><i class="material-icons md-2">menu</i></a>
+                </div>
+                <div class="col-4 col-md-auto d-flex align-items-center justify-content-center justify-content-md-start">
+                    <a href="index.html" class="logo">
+                        
+                    </a>
+                </div>
+                <div class="col d-none d-md-block position-static">
+                    <nav class="navbar nav main-nav justify-content-center justify-content-md-start position-static p-0">
+                        <a class="nav-link" href="index.html">HOME</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SHOP</a>
+                            <div class="dropdown-menu animate">
+                                <a class="dropdown-item" href="shop.html">Shop Grid</a>
+                                <a class="dropdown-item" href="shop-list.html">Shop List</a>
+                                <a class="dropdown-item" href="cart.html">Shopping Cart</a>
+                                <a class="dropdown-item" href="checkout.html">Checkout</a>
+                                <div class="dropdown-submenu">
+                                    <a href="#" class="dropdown-item d-flex justify-content-between">Checkout Wizard <i class="fas fa-chevron-right md-1 mt-1 ml-1" style="color:#b1afaf"></i></a>
+                                    <div class="dropdown-menu animate">
+                                        <a href="checkout-wizard-address.html" class="dropdown-item">Addresses</a>
+                                        <a href="checkout-wizard-shipping.html" class="dropdown-item">Shipping</a>
+                                        <a href="checkout-wizard-payment.html" class="dropdown-item">Payment</a>
+                                        <a href="checkout-wizard-review.html" class="dropdown-item">Review</a>
+                                    </div>                                    
+                                </div>
+                                <a class="dropdown-item" href="detail.html">Single Product</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BLOG</a>
+                            <div class="dropdown-menu animate">
+                                <a class="dropdown-item" href="blog.html">Blog Grid</a>
+                                <a class="dropdown-item" href="blog-list.html">Blog List</a>
+                                <a class="dropdown-item" href="blog-detail.html">Blog Detail</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content my-2">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid" src="~/images/banner1.svg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="~/images/banner2.svg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="~/images/banner3.svg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="~/images/banner4.svg" alt="fourth slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        </div>
+    </footer>
+
+    <!--MODALS-->
+    <div class="modal fade modal-login" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Enter Your Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" class="form-control" id="inputUsername" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <div class="text-right">
+                            <a href="#" class="text-secondary"><small>Forgot Password ?</small></a>
+                        </div>
+                    </div>
+                    <div class="custom-control custom-checkbox mt-1">
+                        <input type="checkbox" class="custom-control-input" id="checkRemember">
+                        <label class="custom-control-label" for="checkRemember">Remember me</label>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <div class="btn-group" role="group" aria-label="Login Action">
+                        <a href="register.html" class="btn btn-outline-theme" role="button">I want to Sign Up</a>
+                        <button type="submit" class="btn btn-theme">SIGN IN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/vendor.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
