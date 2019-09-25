@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Infra.Context;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 
 namespace Ecommerce.Controllers
@@ -8,6 +9,8 @@ namespace Ecommerce.Controllers
     public class HomeController : Controller
     {
         private readonly DatabaseContext db;
+
+        private static Contador _CONTADOR = new Contador();
 
         public HomeController(DatabaseContext db) => this.db = db;
 
@@ -33,6 +36,34 @@ namespace Ecommerce.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+        public object Get()
+        {
+            lock (_CONTADOR)
+            {
+                _CONTADOR.Incrementar();
+
+                return new
+                {
+                    _CONTADOR.ValorAtual,
+                    Environment.MachineName,
+                    Sistema = Environment.OSVersion.VersionString
+                };
+            }
+        }
+    }
+
+    public class Contador
+    {
+        private int _valorAtual = 0;
+
+        public int ValorAtual { get => _valorAtual; }
+
+        public void Incrementar()
+        {
+            _valorAtual++;
         }
     }
 }
