@@ -34,4 +34,5 @@ RUN dotnet publish "Ecommerce.Web.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "Ecommerce.Web.dll"]
